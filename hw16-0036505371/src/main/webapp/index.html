@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<title>Galerija</title>
+
+		<style>
+		.button {
+		   font-family: "Tw Cen MT";
+		   font-weight: bold;
+		   font-size: 1.2em;
+		   color: white;
+		   background-color: rgb(102, 102, 255);
+		   text-shadow: 1px 1px rgb(0, 31, 77);
+		   border: none;
+		   border-radius: 2px;
+		}
+		.button:HOVER {
+		   background-color: rgb(0, 45, 179);
+		}
+		.image {
+			box-shadow: 2px 2px 2px rgb(146, 185, 185);
+		}
+		.image:HOVER {
+			box-shadow: 4px 4px 4px grey;
+		}
+		.fullImage {
+			box-shadow: 7px 7px 10px grey;
+		}
+		  header {
+		  	font-style: normal;
+		  	color: white;	
+		  	background-color: rgb(0, 71, 179);
+		  	border: 1px solid rgb(102, 102, 255);
+  		  	border-radius: 5px;
+  		  	text-shadow: 1px 1px rgb(0, 31, 77);
+		  }
+		  
+		  body {
+ 			 background-color: rgb(230, 236, 255);
+		  }
+		  html {
+		  	font-family:"Tw Cen MT";
+		  }
+		  h2 {
+		  	color: rgb(0, 26, 102);
+		  	font-family:"Tw Cen MT";
+		  	font-size: 2.1em;
+		  }
+		  p {
+		  	color: rgb(0, 26, 102);
+		  	font-family:"Tw Cen MT";
+		  	font-size: 1.4em;
+		  }
+		  
+		</style>
+		
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/htmlescaping.js"></script>
+    	<script type="text/javascript"><!--
+		  // vidi: http://www.w3schools.com/ajax/default.asp
+		
+		  $(document).ready( 
+			  function() {
+				  var xmlhttp;
+					
+					if (window.XMLHttpRequest) {
+						// code for IE7+, Firefox, Chrome, Opera, Safari
+						xmlhttp=new XMLHttpRequest();
+					} else {
+						// code for IE6, IE5
+						xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					
+					xmlhttp.onreadystatechange = function() {
+						if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+							var text = xmlhttp.responseText;
+							var tags = JSON.parse(text);
+							var html = "";
+							
+							for(var i=0; i<tags.length; i++) {
+								if(i>0 && i<tags.length) html += "&nbsp";
+								html += "<button class='button' onclick='vratiIkone(\"" + 
+										htmlEscape(tags[i]) + "\");'>" + tags[i] 
+										+ "</button> &nbsp";
+							}
+							document.getElementById("tagovi").innerHTML = html;
+						}
+					}
+					xmlhttp.open("GET", "rest/images?dummy=" + Math.random(), true);
+					xmlhttp.send();
+		  	  } 
+		  );
+		 
+    	function vratiIkone(tag) {
+			var xmlhttp;
+			
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp=new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					var text = xmlhttp.responseText;
+					var thumbnails = JSON.parse(text);
+					var html = "";
+					for(var i=0; i<thumbnails.length; i++) {
+						if(i>0 && i<thumbnails.length && i%5==0) html += "<br>";
+						html += "<img class='image' src='slike?fileName=" 
+								+ htmlEscape(thumbnails[i].fileName) 
+								+ "&thumbnail=true' onclick='vratiSliku(\"" + 
+								htmlEscape(thumbnails[i].fileName) + "\");'>&nbsp;&nbsp;";
+					}
+					document.getElementById("ikone").innerHTML = html;
+				}
+			}
+			xmlhttp.open("GET", "rest/images/" + tag + "?dummy=" + Math.random(), true);
+			xmlhttp.send();
+		  }
+    	
+    	function vratiSliku(fileName) {
+			var xmlhttp;
+			
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp=new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					var text = xmlhttp.responseText;
+					var image = JSON.parse(text);
+					var html = "";
+					html += "<h2>" + image.title + "</h2>";
+					html += "<img class='fullImage' src='slike?fileName=" 
+							+ htmlEscape(image.fileName) 
+							+ "&thumbnail=false'>";
+					html += "<p><b>Oznake:</b> ";
+					var tags = image.tags;
+					for(var i=0; i<tags.length; i++) {
+						if(i>0 && i<tags.length) html += ", ";
+						html += tags[i];
+					}
+					html += "</p>";
+					document.getElementById("slika").innerHTML = html;
+				}
+			}
+			xmlhttp.open("GET", "rest/images/image/" + fileName + "?dummy=" + Math.random(), true);
+			xmlhttp.send();
+		  }
+		//--></script>
+	</head>
+	<body>
+	
+		<header><h1>&nbsp;Galerija</h1></header>
+		<br>
+	
+		<div id="tagovi">&nbsp;</div>
+		<br>
+		<div id="ikone">&nbsp;</div>
+		<br>
+		<div id="slika">&nbsp;</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+bale.jpg
+Christian Bale
+glumci, filmovi, poznate osobe
+baseball.jpg
+Bejzbol
+sport
+basketball.jpg
+Košarka
+sport
+bear.jpg
+Medo
+priroda, životinje
+carlsen.jpg
+Magnus Carlsen
+šah, poznate osobe, sport
+chris.jpg
+Chris Hemsworth
+glumci, filmovi, poznate osobe
+confuso.jpg
+Zbunjeni peseki
+životinje, psi
+dice.jpg
+Igraće kocke
+sport
+dragontree.jpg
+Drvo
+priroda, biljke
+fatcat.jpg
+Debela maca
+životinje, mačke
+hokey.jpg
+Hokej
+sport
+interstellar.jpg
+Interstellar
+filmovi
+lab.jpg
+Mali pesek
+priroda, životinje, psi
+lion.jpg
+Lav
+priroda, životinje
+nicolascage.jpg
+Nicolas Cage
+poznate osobe, glumci, filmovi
+owl.jpg
+Sova
+priroda, životinje
+polgar.jpg
+Judit Polgar
+šah, poznate osobe, sport
+puppy.jpg
+Najmanji pesek
+životinje, psi
+roses.jpg
+Ruže
+priroda, biljke
+scaredcat.jpg
+Prestrašena maca
+životinje, mačke
+sunflower.jpg
+Suncokret
+priroda, biljke
+tulips.jpg
+Tulipani
+priroda, biljke

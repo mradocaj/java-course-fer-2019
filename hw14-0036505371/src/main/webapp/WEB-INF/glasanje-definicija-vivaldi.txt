@@ -1,0 +1,8 @@
+1	Antonio Vivaldi - Summer	https://www.youtube.com/watch?v=KY1p-FmjT1M
+2	Erik Satie - Gymnopédies	https://www.youtube.com/watch?v=_fuIMye31Gw
+3	Chopin - Ballade No. 1 in G minor, Op. 23	https://www.youtube.com/watch?v=Ce8p0VcTbuA
+4	Schubert - Ave Maria	https://www.youtube.com/watch?v=2bosouX_d8Y
+5	Tchaikovsky - Lake in the Moonlight	https://www.youtube.com/watch?v=_P65WNm48p0
+6	Purcell - Dido and Aeneas (When I Am Laid in Earth)	https://www.youtube.com/watch?v=uGQq3HcOB0Y
+7	Mozart - Lacrimosa	https://www.youtube.com/watch?v=k1-TrAvp_xs
+8	Francisco Tárrega - Capricho árabe	https://www.youtube.com/watch?v=y_goHl-GuNk

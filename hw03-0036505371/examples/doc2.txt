@@ -1,0 +1,7 @@
+A tag follows {$= "Joe \"Long\" Smith"$}.
+
+Example { bla } blu \{$=1$}. Nothing interesting {=here}.
+
+Example \{$=1$}. Now actually write one {$=1$}
+
+I sure hope this will be parsed properly: {$= "I hope \"I do\" \n \r \t"$}.

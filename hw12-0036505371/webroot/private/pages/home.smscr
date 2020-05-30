@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Index2</title>
+ <style>
+ body {background-color: #{$= "background" "7F7F7F" @tparamGet $};}
+ </style>
+ </head>
+ <body>
+ <a href="/scripts/osnovni.smscr">osnovni.smscr</a>
+ <a href="/scripts/brojPoziva.smscr">brojPoziva.smscr</a>
+ <a href="/scripts/fibonaccih.smscr">fibonaccih.smscr</a>
+ <a href="/hello">HelloWorker</a>
+ <a href="/cw">CircleWorker</a>
+ <br> <br> 
+<form action="/calc" method="GET">
+  a = <input type="number" name="a"><br>
+  b = <input type="number" name="b"><br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<select name="bgcolor" form="col">
+  <option value="CC0000">Red</option>
+  <option value="FFCCFF">Pink</option>
+  <option value="99CCFF">Blue</option>
+  <option value="FFFFFF">White</option>
+  <option value="FFFF66">Yellow</option>
+  <option value="66FF66">Green</option>
+</select>
+<form action="/setbgcolor" method="GET" id="col">
+  <input type="submit" value="Submit">
+</form>
+ </body>
+</html>

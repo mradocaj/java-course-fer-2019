@@ -1,0 +1,10 @@
+{$= "Ovo je string" @cos $}Sada malo teksta \\da
+{$= "0" "a" @sin
+ "5.26" 13.71 
+ "0\r\n8\t" $}
+ {$FOR i 0 10 1$}
+ {$FOR i 0 10 1$}
+ {$FOR i 0 10 1$}
+ {$END$}
+ {$END$}
+ {$END$}
